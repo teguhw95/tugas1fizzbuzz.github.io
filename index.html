@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>FizzBuzz</title>
+
+    
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8"><h1>FizzBuzz</h1>
+
+    <form>
+        <table id="databel" class="table">
+
+        <tr>
+        <td><input type="text" class="form-control" id="firstNumber" placeholder="Masukkan Angka"/></td>
+        <td><input type="button" onClick="inputdata()" class="btn btn-primary" Value="Submit"/>
+            <input type="reset" class="btn btn-danger" Value="Reset"/></td>
+        </tr>
+
+        <tr>
+        <td><label for="exampleFormControlTextarea1"><h1>Hasil</h1</label></td>
+        <td><span id = "result"></span></td>
+        </tr>
+    </table>
+        
+
+    </form>
+        </div>          
+      </div>
+    </div>
+	
+<script>
+
+function inputdata()
+{
+        num1 = document.getElementById("firstNumber").value;
+
+        kelipatan3dan5 = "FizzBuzz";
+        kelipatan3 = "Buzz";
+        kelipatan5 = "Fizz";
+        invalid = "Invalid Input";
+        
+        var tabel = document.getElementById("databel");
+        var baris = tabel.insertRow(2);
+        var kol1 = baris.insertCell(0);
+        
+
+        if (num1 > 1 && num1 % 3 === 0 && num1 % 5 === 0) {
+        document.getElementById("result").value = kelipatan3dan5
+        } else if (num1 > 1 && num1 % 3 === 0) {
+        document.getElementById("result").value = kelipatan3
+        } 
+        else if (num1 > 1 && num1 % 5 === 0) {
+        document.getElementById("result").value = kelipatan5
+        } else if (num1 >= 1) {
+        document.getElementById("result").value = num1
+        } else {
+        document.getElementById("result").value = invalid
+        }
+
+        kol1.innerHTML = document.getElementById("result").value;
+        
+}
+
+</script>
+</body>
+</html>
